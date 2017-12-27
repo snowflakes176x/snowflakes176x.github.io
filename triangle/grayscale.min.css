@@ -28,8 +28,8 @@ video {
 } */
 
 .bgc {
-    /* background: rgba(38, 38, 38, .7); */
-    background: #4d5054
+    /* background: rgba(255, 255, 255, 1); */
+    background: #FFFFFF
 }
 
 
@@ -40,8 +40,8 @@ body {
     position: relative;
     width: 100%;
     height: 100%;
-    color: #fff;
-    background-color: #262626
+    color: #262626;
+    background-color: #fff
 }
 
 html {
@@ -98,13 +98,13 @@ a {
     -webkit-transition: all .2s ease-in-out;
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    color: #ff9331
+    color: #798E60
 }
 
 a:focus,
 a:hover {
     text-decoration: none;
-    color: #ff9331
+    color: #798E60
 }
 
 #mainNav {
