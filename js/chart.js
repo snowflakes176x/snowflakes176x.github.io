@@ -166,17 +166,17 @@ var data_dict = {
     ]
 };
 
-var colors = ['#a6cee3', '#1f78b4', '#b2df8a', '#33a02c', '#fb9a99', '#e31a1c', '#fdbf6f', '#ff7f00', '#cab2d6', '#6a3d9a', '#ffff99', '#b15928'];
+var colors = ['#A5B592', '#F3A447', '#E7BC29', '#D092A7', '#9C85C0', '#809EC2', '#C3CEB6', '#F7C589', '#EFD06B', '#E0B6C4', '#B7A7D1', '#496D99', '#5E6E4A', '#DC7F0E', '#B89114', '#A94969', '#684D95', '#365172'];
 var color_idx = -1;
-var color_generator = function () {
+var color_generator = function() {
     color_idx = (color_idx + 1) % colors.length;
     return colors[color_idx];
 };
 
-var series_generator = function (data, fixed_num) {
+var series_generator = function(data, fixed_num) {
     var series = [];
     var max_value = 0;
-    data.forEach(function (d) {
+    data.forEach(function(d) {
         if (d[0] + d[1] > max_value) {
             max_value = d[0] + d[1];
         }
@@ -187,13 +187,13 @@ var series_generator = function (data, fixed_num) {
             name: data[i][2],
             data: [data[i]],
             type: 'scatter',
-            symbolSize: function (d) {
+            symbolSize: function(d) {
                 return Math.sqrt(d[0] + d[1]) * scale_rate;
             },
             label: {
                 emphasis: {
                     show: true,
-                    formatter: function (param) {
+                    formatter: function(param) {
                         return param.data[2] + ': ' + (param.data[0] + param.data[1]) + '人';
                     },
                     position: data[i][3],
@@ -211,7 +211,7 @@ var series_generator = function (data, fixed_num) {
         if (i < fixed_num) {
             item.label.normal = {
                 show: true,
-                formatter: function (param) {
+                formatter: function(param) {
                     return param.data[2] + ': ' + (param.data[0] + param.data[1]) + '人';
                 },
                 position: data[i][3],
@@ -225,17 +225,18 @@ var series_generator = function (data, fixed_num) {
     return series;
 };
 
-var setChart = function (id, title, data) {
+var setChart = function(id, title, data) {
     var element = $('#' + id);
     element.height(element.width());
     var echart = echarts.init(document.getElementById(id));
-    $(window).resize(function () {
+    $(window).resize(function() {
         element.height(element.width());
         echart.resize();
     });
 
-    var max_x = 0, max_y = 0;
-    data.forEach(function (d) {
+    var max_x = 0,
+        max_y = 0;
+    data.forEach(function(d) {
         max_x = d[0] > max_x ? d[0] : max_x;
         max_y = d[1] > max_y ? d[1] : max_y;
     });
@@ -291,17 +292,18 @@ var setChart = function (id, title, data) {
     echart.setOption(option);
 };
 
-var setMiniChart = function (id, title, data) {
+var setMiniChart = function(id, title, data) {
     var element = $('#' + id);
     element.height(element.width());
     var echart = echarts.init(document.getElementById(id));
-    $(window).resize(function () {
+    $(window).resize(function() {
         element.height(element.width());
         echart.resize();
     });
 
-    var max_x = 0, max_y = 0;
-    data.forEach(function (d) {
+    var max_x = 0,
+        max_y = 0;
+    data.forEach(function(d) {
         max_x = d[0] > max_x ? d[0] : max_x;
         max_y = d[1] > max_y ? d[1] : max_y;
     });
@@ -357,11 +359,11 @@ var setMiniChart = function (id, title, data) {
     echart.setOption(option);
 };
 
-var setPieChart = function (id, title) {
+var setPieChart = function(id, title) {
     var element = $('#' + id);
     element.height(element.width());
     var echart = echarts.init(document.getElementById(id));
-    $(window).resize(function () {
+    $(window).resize(function() {
         element.height(element.width());
         echart.resize();
     });
@@ -376,55 +378,53 @@ var setPieChart = function (id, title) {
                 fontWeight: 'bold'
             }
         },
-        series: [
-            {
-                name: 'data',
-                type: 'pie',
-                radius: '75%',
-                center: ['50%', '55%'],
-                data: [
-                    {value: 1599, name: '管弦乐类'},
-                    {value: 1057, name: '民乐类'},
-                    {value: 594, name: '声乐类'},
-                    {value: 581, name: '舞蹈类'},
-                    {value: 107, name: '表演类'}
-                ],
-                label: {
-                    normal: {
-                        show: true,
-                        formatter: '{b}: {d}%',
-                        position: 'inner'
-                    }
-                },
-                itemStyle: {
-                    emphasis: {
-                        shadowBlur: 10,
-                        shadowOffsetX: 0,
-                        shadowColor: 'rgba(0, 0, 0, 0.5)'
-                    }
+        series: [{
+            name: 'data',
+            type: 'pie',
+            radius: '75%',
+            center: ['50%', '55%'],
+            data: [
+                { value: 1599, name: '管弦乐类' },
+                { value: 1057, name: '民乐类' },
+                { value: 594, name: '声乐类' },
+                { value: 581, name: '舞蹈类' },
+                { value: 107, name: '表演类' }
+            ],
+            label: {
+                normal: {
+                    show: true,
+                    formatter: '{b}: {d}%',
+                    position: 'inner'
+                }
+            },
+            itemStyle: {
+                emphasis: {
+                    shadowBlur: 10,
+                    shadowOffsetX: 0,
+                    shadowColor: 'rgba(0, 0, 0, 0.5)'
                 }
             }
-        ]
+        }]
     };
     echart.setOption(option);
 };
 
-$(document).ready(function () {
-    $('.echart').each(function () {
+$(document).ready(function() {
+    $('.echart').each(function() {
         var id = $(this).attr('id');
         var title = '2017年各省毕业艺术特长生分布(' + $(this).attr('title') + ')';
         var data = data_dict[id.split('-')[1]];
         setChart(id, title, data);
     });
 
-    $('.mini-echart').each(function () {
+    $('.mini-echart').each(function() {
         var id = $(this).attr('id');
         var title = '2017年各省毕业艺术特长生分布(' + $(this).attr('title') + ')';
         var data = data_dict[id.split('-')[1]];
         setMiniChart(id, title, data);
     });
 
-    $('.pie-echart').each(function () {
+    $('.pie-echart').each(function() {
         var id = $(this).attr('id');
         var title = '2017年各省毕业艺术特长生项目比重';
         setPieChart(id, title);
