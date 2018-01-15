@@ -166,7 +166,7 @@ var data_dict = {
     ]
 };
 
-var colors = ['#A5B592', '#F3A447', '#E7BC29', '#D092A7', '#9C85C0', '#809EC2', '#C3CEB6', '#F7C589', '#EFD06B', '#E0B6C4', '#B7A7D1', '#496D99', '#5E6E4A', '#DC7F0E', '#B89114', '#A94969', '#684D95', '#365172'];
+var colors = ['#A5B592', '#F3A447', '#D092A7', '#E7BC29', '#9C85C0', '#809EC2', '#C3CEB6', '#F7C589', '#EFD06B', '#E0B6C4', '#B7A7D1', '#496D99', '#5E6E4A', '#DC7F0E', '#B89114', '#A94969', '#684D95', '#365172'];
 var color_idx = -1;
 var color_generator = function() {
     color_idx = (color_idx + 1) % colors.length;
