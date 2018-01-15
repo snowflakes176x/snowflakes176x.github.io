@@ -402,8 +402,10 @@ var setPieChart = function(id, title) {
                     shadowBlur: 10,
                     shadowOffsetX: 0,
                     shadowColor: 'rgba(0, 0, 0, 0.5)'
+
                 }
-            }
+            },
+            color: ['#A5B592', '#F3A447', '#D092A7', '#9C85C0', '#809EC2']
         }]
     };
     echart.setOption(option);
