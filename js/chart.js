@@ -173,7 +173,12 @@ var color_generator = function() {
     return colors[color_idx];
 };
 
-// var color_dict= { '辽宁': '#A5B592', '江苏': '#F3A447', '北京': '#D092A7', '山东': '#E7BC29', '陕西': '#9C85C0', '四川': '#809EC2', '重庆': '#C3CEB6', '广东': '#F7C589', '黑龙江': '#E0B6C4', '浙江': '#EFD06B', '湖南': '#B7A7D1', '上海': '#496D99', '河北': '#5E6E4A', '河南': '#DC7F0E', '安徽': '#A94969', '湖北': '#B89114', '吉林': '#684D95', '甘肃': '#365172', '天津': '#DFE4D8', '福建': '#FADAB4', '山西': '#EBD1DA', '内蒙古': '#F6E5B0', '江西': '#CBC0DE', '贵州': '#A2B8D2', '广西': '#A5B592', '海南': '#F3A447', '宁夏': '#D092A7', '新疆': '#E7BC29', '西藏': '#9C85C0', '云南': '#809EC2' }
+// var colors = { '辽宁': '#A5B592', '江苏': '#F3A447', '北京': '#D092A7', '山东': '#E7BC29', '陕西': '#9C85C0', '四川': '#809EC2', '重庆': '#C3CEB6', '广东': '#F7C589', '黑龙江': '#E0B6C4', '浙江': '#EFD06B', '湖南': '#B7A7D1', '上海': '#496D99', '河北': '#5E6E4A', '河南': '#DC7F0E', '安徽': '#A94969', '湖北': '#B89114', '吉林': '#684D95', '甘肃': '#365172', '天津': '#DFE4D8', '福建': '#FADAB4', '山西': '#EBD1DA', '内蒙古': '#F6E5B0', '江西': '#CBC0DE', '贵州': '#A2B8D2', '广西': '#A5B592', '海南': '#F3A447', '宁夏': '#D092A7', '新疆': '#E7BC29', '西藏': '#9C85C0', '云南': '#809EC2' }
+// var color_generator = function() {
+//     data_dict[item]
+//     for item in data_dict: var province = data_dict[item][2];
+//     return colors[province];
+// };
 
 var series_generator = function(data, fixed_num) {
     var series = [];
