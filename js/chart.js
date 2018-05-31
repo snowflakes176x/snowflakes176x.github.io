@@ -283,7 +283,7 @@ var setChart = function(id, title, data) {
             left: 'center',
             top: 'top',
             textStyle: {
-                fontSize: 22,
+                fontSize: 18,
                 fontWeight: 'bold'
             }
         },
@@ -350,7 +350,7 @@ var setMiniChart = function(id, title, data) {
             left: 'center',
             top: 'top',
             textStyle: {
-                fontSize: 18,
+                fontSize: 14,
                 fontWeight: 'bold'
             }
         },
