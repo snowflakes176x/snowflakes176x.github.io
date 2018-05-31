@@ -32,7 +32,7 @@ var data_dict = {
         [1, 0, '云南', 'right']
     ],
     'dancing': [
-        [52, 37, '辽宁', 'right'],
+        [52, 37, '辽宁', 'top'],
         [0, 58, '陕西', 'right'],
         [2, 55, '北京', 'right'],
         [4, 43, '重庆', 'right'],
@@ -124,7 +124,7 @@ var data_dict = {
         [63, 49, '辽宁', 'top'],
         [20, 37, '山东', 'top'],
         [21, 33, '江苏', 'right'],
-        [19, 34, '重庆', 'left'],
+        [19, 34, '重庆', 'right'],
         [23, 28, '北京', 'right'],
         [7, 27, '黑龙江', 'top'],
         [13, 17, '四川', 'top'],
@@ -209,7 +209,7 @@ var color_generator = function(province) {
     return colors[province];
 };
 
-var series_generator = function(data, fixed_num) {
+var series_generator = function(data, max_size, fixed_num) {
     var series = [];
     var max_value = 0;
     data.forEach(function(d) {
@@ -217,7 +217,7 @@ var series_generator = function(data, fixed_num) {
             max_value = d[0] + d[1];
         }
     });
-    var scale_rate = 60 / Math.sqrt(max_value);
+    var scale_rate = max_size / Math.sqrt(max_value);
     for (var i = 0; i < data.length; i++) {
         var item = {
             name: data[i][2],
@@ -323,7 +323,7 @@ var setChart = function(id, title, data) {
                 formatter: '{value}'
             }
         },
-        series: series_generator(data, 5)
+        series: series_generator(data, 60, 5)
     };
     echart.setOption(option);
 };
@@ -360,7 +360,8 @@ var setMiniChart = function(id, title, data) {
             max: max_value,
             nameGap: 12,
             nameTextStyle: {
-                fontSize: 14
+                fontSize: 12,
+                padding: [0, 0, 0, -2]
             },
             splitLine: {
                 show: false,
@@ -378,7 +379,7 @@ var setMiniChart = function(id, title, data) {
             max: max_value,
             nameGap: 12,
             nameTextStyle: {
-                fontSize: 14
+                fontSize: 12
             },
             splitLine: {
                 show: false,
@@ -390,7 +391,7 @@ var setMiniChart = function(id, title, data) {
                 formatter: '{value}'
             }
         },
-        series: series_generator(data, 3)
+        series: series_generator(data, 40, 2)
     };
     echart.setOption(option);
 };
