@@ -3,31 +3,3 @@
 .pie-echart {
     width: 100%;
 }
-
-.masthead {
-    display: table;
-    width: 100%;
-    height: auto;
-    padding: 200px 0;
-    text-align: center;
-    color: #fff;
-    background: url(../img/937.png) no-repeat bottom center scroll;
-    background-color: #000;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-.masthead .intro-body {
-    display: table-cell;
-    vertical-align: middle
-}
-
-.masthead .intro-body .brand-heading {
-    font-size: 36px
-}
-
-.masthead .intro-body .intro-text {
-    font-size: 18px
-}
