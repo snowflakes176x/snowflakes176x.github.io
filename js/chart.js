@@ -350,7 +350,7 @@ var setMiniChart = function(id, title, data) {
             left: 'center',
             top: 'top',
             textStyle: {
-                fontSize: 14,
+                fontSize: 18,
                 fontWeight: 'bold'
             }
         },
@@ -449,14 +449,14 @@ var setPieChart = function(id, title) {
 $(document).ready(function() {
     $('.echart').each(function() {
         var id = $(this).attr('id');
-        var title = '2017年各省毕业艺术特长生分布(' + $(this).attr('title') + ')';
+        var title = '2017年' + $(this).attr('title') + '特长生分布';
         var data = data_dict[id.split('-')[1]];
         setChart(id, title, data);
     });
 
     $('.mini-echart').each(function() {
         var id = $(this).attr('id');
-        var title = '2017年各省毕业艺术特长生分布(' + $(this).attr('title') + ')';
+        var title = '2017年' + $(this).attr('title') + '特长生分布';
         var data = data_dict[id.split('-')[1]];
         setMiniChart(id, title, data);
     });
